@@ -1,12 +1,12 @@
 December
 19.12: 88
-20.12: 118, 66, 26
+20.12: 118, 66, 26, 24
 
 Level
-easy: 3
+easy: 5
 medium: 0
 hard: 0
 
 Tags
-array: 4
-two pointers: 2
+array: 5
+two pointers: 3
