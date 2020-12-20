@@ -1,12 +1,12 @@
 December
-19.12: 66
-20.12: 118
+19.12: 88
+20.12: 118, 66
 
 Level
-easy: 2
+easy: 3
 medium: 0
 hard: 0
 
 Tags
-array: 2
+array: 3
 two_pointers: 1
