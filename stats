@@ -1,13 +1,17 @@
 December
-19.12: 88
-20.12: 118, 66, 26, 24, 209
+19: 88
+20: 118, 66, 26, 24, 209
+
+February
+05: 1
 
 Level
-easy: 5
+easy: 6
 medium: 1
 hard: 0
 
 Tags
-array: 6
+array: 7
+hash table: 1
 two pointers: 4
 binary search: 0
