@@ -4,14 +4,15 @@ December
 
 February
 05: 1
+06: 384
 
 Level
 easy: 6
-medium: 1
+medium: 2
 hard: 0
 
 Tags
-array: 7
+array: 8
 hash table: 1
 two pointers: 4
-binary search: 0
+binary search: 1
