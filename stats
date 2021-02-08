@@ -6,14 +6,15 @@ February
 05: 1
 06: 384, 16
 07: 31
+08: 162
 
 Level
 easy: 6
-medium: 4
+medium: 5
 hard: 0
 
 Tags
-array: 10
+array: 11
 hash table: 1
 two pointers: 5
-binary search: 1
+binary search: 2
