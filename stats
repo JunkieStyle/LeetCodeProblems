@@ -7,15 +7,16 @@ February
 06: 384, 16
 07: 31
 08: 162, 153
-09: 128
+09: 128, 268
 
 Level
-easy: 6
+easy: 7
 medium: 6
 hard: 1
 
 Tags
-array: 13
+array: 14
 hash table: 2
 two pointers: 5
 binary search: 3
+bit manipulation: 1
