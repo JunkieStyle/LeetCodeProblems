@@ -10,17 +10,18 @@ February
 09: 128, 268, 122
 11: 120
 12: 34!
+16: 35
 
 Level
-easy: 8
+easy: 9
 medium: 7
 hard: 1
 
 Tags
-array: 17
+array: 18
 hash table: 2
 two pointers: 5
-binary search: 4
+binary search: 5
 bit manipulation: 1
 greedy: 1
 dynamic programming: 1
