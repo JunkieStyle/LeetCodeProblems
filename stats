@@ -11,17 +11,13 @@ February
 11: 120
 12: 34!
 16: 35
+17: 106!
 
 Level
 easy: 9
-medium: 7
+medium: 8
 hard: 1
 
 Tags
 array: 18
-hash table: 2
-two pointers: 5
-binary search: 5
-bit manipulation: 1
-greedy: 1
-dynamic programming: 1
+tree: 1
