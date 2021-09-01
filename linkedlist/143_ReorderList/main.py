@@ -4,35 +4,27 @@ class ListNode:
         self.val = val
         self.next = next
 
-    def to_list(self):
-        res = []
-        curr = self
-        while curr:
-            res.append(curr.val)
-            curr = curr.next
-        return res
 
 class Solution:
     def reorderList(self, head: ListNode) -> None:
-        fast = slow = head
-    
-        while fast and fast.next:
+        slow = fast = head
+        while fast.next and fast.next.next:
             fast = fast.next.next
             slow = slow.next
+            
+        mid = slow.next
+        slow.next = None
                 
-        curr = slow
         prev = None
-        while curr:
-            curr.next, prev, curr = prev, curr, curr.next
-        
-        dummy = ListNode(-1)
-        tail = prev
-        prev = dummy
-        while tail:
-            prev.next, head = head, head.next
-            if tail != prev.next:
-                prev.next.next, tail = tail, tail.next
-                prev = prev.next.next
-            else:
-                break
-        return dummy.next
+        node = mid
+        while node:
+            node.next, node, prev = prev, node.next, node
+            
+        head1, head2 = head, prev
+        while head2:
+            nextt = head1.next
+            head1.next = head2
+            head1 = head2
+            head2 = nextt
+            
+        return head
