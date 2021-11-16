@@ -4,22 +4,17 @@ import heapq
 class Solution:
     def kthSmallest(self, matrix: list[list[int]], k: int) -> int:
         n = len(matrix)
-        i = j = counter = 0
-        heap, seen = [], set()
-        heapq.heappush(heap, (matrix[i][j], i, j))
+        heap = []
+        heapq.heapify(heap)
 
-        while counter < k:
+        for i in range(n):
+            heapq.heappush(heap, (matrix[i][0], i, 0))
+
+        for _ in range(k):
             val, i, j = heapq.heappop(heap)
-            seen.add((i, j))
-
-            if j + 1 < n and (i == 0 or (i - 1, j + 1) in seen):
+            if j + 1 < n:
                 heapq.heappush(heap, (matrix[i][j + 1], i, j + 1))
-
-            if i + 1 < n and (j == 0 or (i + 1, j - 1) in seen):
-                heapq.heappush(heap, (matrix[i + 1][j], i + 1, j))
-
-            counter += 1
-        
+ 
         return val
 
 
