@@ -1,0 +1,66 @@
+from collections import defaultdict, Counter
+from typing import List
+
+
+class UF:
+    def __init__(self, n):
+        self.parents = list(range(n))
+        self.ranks = [1] * n
+        
+    def find(self, value):
+        if self.parents[value] != value:
+            self.parents[value] = self.find(self.parents[value])
+        return self.parents[value]
+    
+    def union(self, v, w):
+        pv = self.find(v)
+        pw = self.find(w)
+        
+        if pv == pw:
+            return False
+        
+        if self.ranks[pv] > self.ranks[pw]:
+            self.parents[pv] = pw
+        elif self.ranks[pv] < self.ranks[pw]:
+            self.parents[pw] = pv
+        else:
+            self.parents[pv] = pw
+            self.ranks[pv] += 1
+        
+        return True
+    
+
+def get_primes(n):
+    factor = set()
+    if n & 1 == 0:
+        factor.add(2)
+        while n & 1 == 0: n >>= 1
+            
+    d = 3
+    while d * d <= n:
+        if n % d == 0:
+            factor.add(d)
+            while n % d == 0: n //= d
+        d += 2
+        
+    if n > 1: factor.add(n)
+        
+    return factor
+
+
+class Solution:
+    def largestComponentSize(self, nums: List[int]) -> int:
+        primes = defaultdict(list)
+        for i, num in enumerate(nums):
+            for prime in get_primes(num):
+                primes[prime].append(i)
+        
+        uf = UF(len(nums))
+        for lst in primes.values():
+            v = lst[0]
+            for w in lst[1:]:
+                uf.union(v, w)
+                
+        counter = Counter(uf.find(i) for i in range(len(nums)))
+        return max(counter.values())
+                
