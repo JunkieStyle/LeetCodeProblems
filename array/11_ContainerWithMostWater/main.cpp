@@ -2,17 +2,16 @@
 #include "vector"
 
 class Solution {
- public:
-  int maxArea(std::vector<int>& height) {
-    int i = 0;
-    int j = height.size() - 1;
-    int result = 0;
-    while (i < j) {
-      int h = std::min({height[i], height[j]});
-      result = std::max({result, h * (j - i)});
-      while (height[i] <= h && i < j) i++;
-      while (height[j] <= h && i < j) j--;
+public:
+    int maxArea(std::vector<int>& height) {
+        int l = 0;
+        int r = height.size() - 1;
+        int result = 0;
+
+        while (l < r) {
+            result = std::max((r - l) * std::min(height[l], height[r]), result);
+            height[l] < height[r] ? l++: r--;
+        }
+        return result;
     }
-    return result;
-  }
 };
